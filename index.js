@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-import { readFileSync } from "node:fs";
-import _ from "lodash";
+import { readFileSync } from 'node:fs';
+import _ from 'lodash';
 
 const genDiff = (filepath1, filepath2) => {
-  const data1 = readFileSync(filepath1, "utf-8");
-  const data2 = readFileSync(filepath2, "utf-8");
+  const data1 = readFileSync(filepath1, 'utf-8');
+  const data2 = readFileSync(filepath2, 'utf-8');
   const content1 = JSON.parse(data1);
   const content2 = JSON.parse(data2);
 
@@ -29,7 +29,7 @@ const genDiff = (filepath1, filepath2) => {
     return acc;
   };
   const result = keys.reduce(cb, []).join('\n');
-  return `{\n${result}\n}`
+  return `{\n${result}\n}`;
 };
 
 // path.resolve(path);
