@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import genDiff from '../index.js';
+import genDiff from '../index';
 
 const program = new Command();
 
@@ -12,6 +12,7 @@ program
   .argument('<filepath1>', 'path to the first file to compare')
   .argument('<filepath2>', 'path to the first second to compare')
   .action((filepath1, filepath2) => {
+    // eslint-disable-next-line no-console
     console.log(genDiff(filepath1, filepath2));
   });
 
