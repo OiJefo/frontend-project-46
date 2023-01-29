@@ -1,16 +1,18 @@
 #!/usr/bin/env node
-import { readFileSync } from 'node:fs';
-import _ from 'lodash';
+import { readFileSync } from "node:fs";
+import getPath from "./getPath.js";
+import _ from "lodash";
 
 const genDiff = (filepath1, filepath2) => {
-  const data1 = readFileSync(filepath1, 'utf-8');
-  const data2 = readFileSync(filepath2, 'utf-8');
+  const absolutePath1 = getPath(String(filepath1));
+  const absolutePath2 = getPath(String(filepath2));
+
+  const data1 = readFileSync(absolutePath1, "utf-8");
+  const data2 = readFileSync(absolutePath2, "utf-8");
+
   const content1 = JSON.parse(data1);
   const content2 = JSON.parse(data2);
-
-  const keys1 = _.keys(content1);
-  const keys2 = _.keys(content2);
-  const keys = _.union(keys1, keys2).sort();
+  const keys = _.union(_.keys(content1), _.keys(content2)).sort();
 
   const cb = (acc, key) => {
     const minus = `- ${key}`;
@@ -28,9 +30,8 @@ const genDiff = (filepath1, filepath2) => {
     }
     return acc;
   };
-  const result = keys.reduce(cb, []).join('\n');
+  const result = keys.reduce(cb, []).join("\n");
   return `{\n${result}\n}`;
 };
-// path.resolve(path);
-// process.cwd()
+
 export default genDiff;

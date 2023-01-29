@@ -1,17 +1,24 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { test, expect } from '@jest/globals';
-import { readFileSync } from 'node:fs';
-import genDiff from '../index';
+import { fileURLToPath } from 'url';
+import * as path from 'path';
+import genDiff from '../src/index.js';
 
-const data1 = readFileSync('../__fixtures__/file1.json', 'utf-8');
-const data2 = readFileSync('../__fixtures__/file2.json', 'utf-8');
-const data3 = readFileSync('../__fixtures__/expectedfile.txt', 'utf-8');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-const content1 = JSON.parse(data1);
-const content2 = JSON.parse(data2);
-const content3 = JSON.parse(data3);
+const first = getFixturePath('file1.json');
+const second = getFixturePath('file2.json');
+const expected = `{
+  + follow: false
+    host: hexlet.io
+  + proxy: 123.234.53.22
+  - timeout: 20
+  + timeout: 50
+  - verbose: true
+}`;
 
-const cases = [[content1, content2, content3]];
+const cases = [[first, second, expected]];
 
 // eslint-disable-next-line no-undef
 describe('genDiff example', () => {
