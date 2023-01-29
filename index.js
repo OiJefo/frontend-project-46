@@ -31,8 +31,6 @@ const genDiff = (filepath1, filepath2) => {
   const result = keys.reduce(cb, []).join('\n');
   return `{\n${result}\n}`;
 };
-
 // path.resolve(path);
 // process.cwd()
-
 export default genDiff;

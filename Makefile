@@ -1,5 +1,3 @@
-setup: install link publish
-
 install: 
 	npm ci
 
