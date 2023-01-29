@@ -5,13 +5,12 @@ import genDiff from '../index';
 
 const data1 = readFileSync('../__fixtures__/file1.json', 'utf-8');
 const data2 = readFileSync('../__fixtures__/file2.json', 'utf-8');
-const data3 = readFileSync('../__fixtures__/expectedfile.json', 'utf-8');
+const data3 = readFileSync('../__fixtures__/expectedfile.txt', 'utf-8');
 
 const content1 = JSON.parse(data1);
 const content2 = JSON.parse(data2);
 const content3 = JSON.parse(data3);
 
-// const expected = '{\n  + follow: false\n  host: hexlet.io\n  + proxy: 123.234.53.22\n  - timeout: 20\n  + timeout: 50\n  - verbose: true\n}';
 const cases = [[content1, content2, content3]];
 
 // eslint-disable-next-line no-undef
