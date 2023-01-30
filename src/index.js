@@ -1,17 +1,22 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
 import getPath from "./getPath.js";
+import parseFile from "./parseFile.js";
 import _ from "lodash";
 
-const genDiff = (filepath1, filepath2) => {
-  const absolutePath1 = getPath(String(filepath1));
-  const absolutePath2 = getPath(String(filepath2));
+const genDiff = (filePath1, filePath2) => {
+  const absolutePath1 = getPath(String(filePath1));
+  const absolutePath2 = getPath(String(filePath2));
 
   const data1 = readFileSync(absolutePath1, "utf-8");
   const data2 = readFileSync(absolutePath2, "utf-8");
 
-  const content1 = JSON.parse(data1);
-  const content2 = JSON.parse(data2);
+  const ext1 = _.last(filePath1.split(".")).toLowerCase();
+  const ext2 = _.last(filePath1.split(".")).toLowerCase();
+
+  const content1 = parseFile(data1, ext1);
+  const content2 = parseFile(data2, ext2);
+
   const keys = _.union(_.keys(content1), _.keys(content2)).sort();
 
   const cb = (acc, key) => {
