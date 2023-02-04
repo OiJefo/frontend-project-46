@@ -11,3 +11,4 @@ const getData = (filePath) =>
   parse(readFile(getPath(filePath)), getExtension(filePath));
 
 export default getData;
+  
