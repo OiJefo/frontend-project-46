@@ -1,13 +1,15 @@
-import stylishFormat from "./stylish.js";
-import plainFormat from "./plain.js";
+// eslint-disable-next-line import/extensions
+import stylishFormat from './stylish.js';
+// eslint-disable-next-line import/extensions
+import plainFormat from './plain.js';
 
 const getFormat = (data, format) => {
   switch (format) {
-    case "stylish":
+    case 'stylish':
       return stylishFormat(data, 0);
-    case "plain":
+    case 'plain':
       return plainFormat(data);
-    case "json":
+    case 'json':
       return JSON.stringify(data);
     default:
       throw new Error(`${format} is not supported`);
