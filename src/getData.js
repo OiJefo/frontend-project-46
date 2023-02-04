@@ -1,6 +1,6 @@
 import * as path from "path";
 import { readFileSync } from "node:fs";
-import parse from "./parser";
+import parse from "./parser.js";
 
 const getPath = (way) =>
   // eslint-disable-next-line no-undef

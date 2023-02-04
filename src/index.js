@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import getData from "./getData";
-import getDiff from "./getDiff";
-import getFormat from "./getFormat"
+import getData from "./getData.js";
+import getDiff from "./getDiff.js";
+import getFormat from "./getFormat.js"
 
 const genDiff = (filePath1, filePath2, format = "stylish") => {
   const data1 = getData(filePath1);
