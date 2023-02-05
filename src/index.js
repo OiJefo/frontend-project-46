@@ -12,14 +12,9 @@ const getPath = (way) => path.resolve(process.cwd(), way);
 const getExtension = (filepath) => path.extname(filepath).toLowerCase();
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
-  const content1 = readFileSync(getPath(filepath1), 'utf-8');
-  const content2 = readFileSync(getPath(filepath2), 'utf-8');
-
-  const data1 = parser(content1, getExtension(filepath1));
-  const data2 = parser(content2, getExtension(filepath2));
-
-  const differences = getFormat(getDiff(data1, data2), format);
-  return differences;
+  const data1 = parser(readFileSync(getPath(filepath1), 'utf-8'), getExtension(filepath1));
+  const data2 = parser(readFileSync(getPath(filepath2), 'utf-8'), getExtension(filepath2));
+  return getFormat(getDiff(data1, data2), format);
 };
 
 export default genDiff;

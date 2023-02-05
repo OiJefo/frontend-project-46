@@ -9,12 +9,10 @@ const addChild = (child) => {
   }
   return `${child}`;
 };
-
 const plainFormat = (array, accum = '') => {
   const keys = Object.keys(array);
   const result = keys.map((key) => {
     const obj = array[key];
-
     if (obj.type === 'parent') {
       return plainFormat(obj.children, `${accum}${obj.key}.`);
     }
@@ -29,7 +27,6 @@ const plainFormat = (array, accum = '') => {
     }
     return null;
   });
-
   return result.filter((line) => line !== null).join('\n');
 };
 
