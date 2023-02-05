@@ -6,7 +6,7 @@ import getFormat from './getFormat.js';
 
 // eslint-disable-next-line no-undef
 const getPath = (way) => path.resolve(process.cwd(), way);
-const getExtension = (filepath) => filepath.split('.').reverse()[0];
+const getExtension = (filepath) => path.extname(filepath).slice(1);
 
 const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const data1 = parser(readFileSync(getPath(filepath1), 'utf-8'), getExtension(filepath1));
