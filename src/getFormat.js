@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/extensions
 import stylishFormat from './stylish.js';
-// eslint-disable-next-line import/extensions
 import plainFormat from './plain.js';
 
 const getFormat = (data, format) => {

@@ -2,7 +2,6 @@ import { test, expect } from '@jest/globals';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'url';
 import path from 'path';
-// eslint-disable-next-line import/extensions
 import genDiff from '../src/index.js';
 
 // eslint-disable-next-line no-underscore-dangle
