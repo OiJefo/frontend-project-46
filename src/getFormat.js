@@ -6,7 +6,7 @@ import plainFormat from './plain.js';
 const getFormat = (data, format) => {
   switch (format) {
     case 'stylish':
-      return stylishFormat(data, 0);
+      return stylishFormat(data);
     case 'plain':
       return plainFormat(data);
     case 'json':
