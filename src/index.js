@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import path from 'path';
 import getDiff from './getDiff.js';
 import parser from './parser.js';
-import getFormat from './getFormat.js';
+import getFormat from '..display/getFormat.js';
 
 // eslint-disable-next-line no-undef
 const getPath = (way) => path.resolve(process.cwd(), way);
