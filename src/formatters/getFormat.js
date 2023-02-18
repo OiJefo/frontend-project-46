@@ -10,7 +10,7 @@ const getFormat = (data, format) => {
     case 'json':
       return JSON.stringify(data);
     default:
-      throw new Error(`${format} is not supported`);
+      return `output format ${format} not found`;
   }
 };
 

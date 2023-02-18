@@ -5,15 +5,12 @@ import genDiff from '../src/index.js';
 const program = new Command();
 
 program
-  .name('genDiff')
-  .version('0.0.1')
   .description('Compares two configuration files and shows a difference.')
-  .option('-f, --format <type>', 'output format', 'stylish')
-  .argument('<filepath1>', 'path to the first file to compare')
-  .argument('<filepath2>', 'path to the first second to compare')
-  .action((filepath1, filepath2, options) => {
-    // eslint-disable-next-line no-console
-    console.log(genDiff(filepath1, filepath2, options.format));
+  .version('0.0.1', '-V, --version', 'output the version number')
+  .option('-f, --format <type>', 'output format')
+  .argument('<filepath1>')
+  .argument('<filepath2>')
+  .action((filepath1, filepath2) => {
+    console.log(genDiff(filepath1, filepath2, program.opts().format));
   });
-
 program.parse();
