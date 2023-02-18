@@ -38,7 +38,7 @@ Options:
 <a href="https://asciinema.org/a/2GchvUcB91YUpVLOFCYzIxMH8" target="_blank"><img src="https://asciinema.org/a/2GchvUcB91YUpVLOFCYzIxMH8.svg" /></a>
 
 ### Sample output in plain format
+<a href="https://asciinema.org/a/diJnsOPweCGEvDl1cCNc2QmtO" target="_blank"><img src="https://asciinema.org/a/diJnsOPweCGEvDl1cCNc2QmtO.svg" /></a>
 
 ### Sample output in json format
-
-
+<a href="https://asciinema.org/a/bghvW8mHYaRddCM9pNoHdJSzL" target="_blank"><img src="https://asciinema.org/a/bghvW8mHYaRddCM9pNoHdJSzL.svg" /></a>

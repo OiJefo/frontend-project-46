@@ -9,12 +9,14 @@ const addChild = (child) => {
   }
   return `${child}`;
 };
-const plainFormat = (array, accum = '') => {
+
+const plain = (array, accum = '') => {
   const keys = Object.keys(array);
   const result = keys.map((key) => {
     const obj = array[key];
+
     if (obj.type === 'parent') {
-      return plainFormat(obj.children, `${accum}${obj.key}.`);
+      return plain(obj.children, `${accum}${obj.key}.`);
     }
     if (obj.type === 'deleted') {
       return `Property '${accum + obj.key}' was removed`;
@@ -27,7 +29,8 @@ const plainFormat = (array, accum = '') => {
     }
     return null;
   });
+
   return result.filter((line) => line !== null).join('\n');
 };
 
-export default plainFormat;
+export default plain;
