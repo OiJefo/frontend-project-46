@@ -12,7 +12,6 @@ The difference calculator determines the difference between two format files: ya
 3. Clone current repository ```git@github.com:OiJefo/frontend-project-46.git```
 4. Run ```make install```
 
-
 ### Program usage
 You can use the program as a script in the terminal or as a library in your JavaScript project. You can output differences in three formats: stylish (default), plain and json. For information, type ```gendiff -h```.
 
