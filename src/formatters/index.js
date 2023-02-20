@@ -11,6 +11,6 @@ export default (diff, formatName) => {
     case 'stylish':
       return stylish(diff);
     default:
-      return `output format ${formatName} not found`;
+      return `Output format ${formatName} not found`;
   }
 };
