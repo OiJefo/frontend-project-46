@@ -33,11 +33,11 @@ Options:
 ### Compare yaml files
 <a href="https://asciinema.org/a/LXD11rE8ohn2OWLNnFDeM36pk" target="_blank"><img src="https://asciinema.org/a/LXD11rE8ohn2OWLNnFDeM36pk.svg" /></a>
 
-### Comparing files with a nested data structure
-<a href="https://asciinema.org/a/2GchvUcB91YUpVLOFCYzIxMH8" target="_blank"><img src="https://asciinema.org/a/2GchvUcB91YUpVLOFCYzIxMH8.svg" /></a>
-
 ### Sample output in plain format
 <a href="https://asciinema.org/a/diJnsOPweCGEvDl1cCNc2QmtO" target="_blank"><img src="https://asciinema.org/a/diJnsOPweCGEvDl1cCNc2QmtO.svg" /></a>
+
+### Comparing files with a nested data structure
+<a href="https://asciinema.org/a/2GchvUcB91YUpVLOFCYzIxMH8" target="_blank"><img src="https://asciinema.org/a/2GchvUcB91YUpVLOFCYzIxMH8.svg" /></a>
 
 ### Sample output in json format
 <a href="https://asciinema.org/a/bghvW8mHYaRddCM9pNoHdJSzL" target="_blank"><img src="https://asciinema.org/a/bghvW8mHYaRddCM9pNoHdJSzL.svg" /></a>

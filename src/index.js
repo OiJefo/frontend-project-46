@@ -1,7 +1,10 @@
 import { readFileSync } from 'node:fs';
 import path from 'path';
+// eslint-disable-next-line import/extensions
 import getDiff from './getDiff.js';
+// eslint-disable-next-line import/extensions
 import parser from './parser.js';
+// eslint-disable-next-line import/extensions
 import getFormat from './formatters/index.js';
 
 // eslint-disable-next-line no-undef
